@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Horas extras | DSTech</title>
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <img class="inicio" src="images/icone.png" alt="Icone">
+        <h2>Calculadora de Horas Extras</h2>
+            <div class="input-group">
+                <form id="loginForm">
+                    <div class="inputs">
+                        Salário Base: <br>
+                        <input type="text" class="salario" id="moneyInput" placeholder="R$ 0,00">
+                        <input type="button" class="salario" id="salarioPadrao" value="R$ 1.442,00" onclick="SalarioDefault()">
+                    </div>                    
+                    <div class="inputs">
+                        Carga Horária Semanal: 
+                    <div class="input-container">
+                        <span class="help-icon" onclick="toggleTooltip(event)"><img id="aviso" src="images/aviso.png" alt=""></span>
+                        <div class="tooltip">
+                            Informar a carga horária mensal de trabalho (se você não souber, basta multiplicar a quantidade de horas trabalhadas na semana por 5. Ex: 44h semanais equivalem a 220h mensais).
+                        </div>
+                    </div><br>
+                        <input type="text" class="cargaHoraria" id="cargaHoraria" placeholder="Digite a carga horária">
+                        <button type="button" class="cargaHoraria" id="cargaPadrao" value="220 h" onclick="CargaDefault()">
+                            <span>220h</span>
+                        </button>
+                    </div>
+                    
+                    <div class="inputs">
+                        Horas Extras 50%:
+                        <input type="number" id="horaextra50" placeholder="Digite as horas extras" required>
+                    </div>
+                    <div class="inputs">
+                        Horas Extras 100%:
+                        <input type="number" id="horaextra100" placeholder="Digite as horas extras" required>
+                    </div>
+                    <button type="submit">Calcular</button>
+                </form>              
+                
+                <div id=printable>
+                    <div id="totalizador" class="resultado"></div><br><br>
+                </div>
+                <div class="atualizar">
+                    <button onclick="window.print()">Imprimir</button> <button onclick="EnviarEmail()">Enviar E-mail</button> <br><br>
+                    <button onclick ="atualizarPagina()" title="Recomeçar">
+                        <i class="fas fa-sync"></i>                    
+                    </button><br><br>
+                    <p class="footer">Developer by: Dávile Silva | 2024</p>
+                </div>
+            </div> 
+    </div> 
+    <br>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
